@@ -15,14 +15,16 @@ class Severa < Formula
   license "UNLICENSED"
 
   on_macos do
-    on_arm do
-      url "https://api.github.com/repos/Metatavu/severa-cli/releases/assets/572297087",
-          headers: [
-            "Accept: application/octet-stream",
-            "Authorization: Bearer #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", "")}",
-          ]
-      sha256 "4a1d9d5438a5ad3905989a01fffa01a6b57cfd9a1ed77af75e6af0211594f49c"
-    end
+    # No Intel build: Apple stopped shipping those Macs in 2023. Rosetta
+    # translates x86 to arm, not the reverse, so there is nothing to fall back to.
+    depends_on arch: :arm64
+
+    url "https://api.github.com/repos/Metatavu/severa-cli/releases/assets/572297087",
+        headers: [
+          "Accept: application/octet-stream",
+          "Authorization: Bearer #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", "")}",
+        ]
+    sha256 "4a1d9d5438a5ad3905989a01fffa01a6b57cfd9a1ed77af75e6af0211594f49c"
   end
 
   on_linux do
