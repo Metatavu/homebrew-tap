@@ -2,28 +2,28 @@
 class Severa < Formula
   desc "Controlled access to Severa for people, CI and agents"
   homepage "https://github.com/Metatavu/severa-cli"
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
     # No Intel build: Apple stopped shipping those Macs in 2023. Rosetta
     # translates x86 to arm, not the reverse, so there is nothing to fall back to.
     depends_on arch: :arm64
 
-    url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.2.0/severa-darwin-arm64.tar.gz"
-    sha256 "5d3c4f9ab14c55ff4fb3418aa9612df1979533da61d1c1cf31a70d5f32e20731"
+    url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.3.0/severa-darwin-arm64.tar.gz"
+    sha256 "203f48f9e86ce09d6c0bb857f81c533301f6853f878019fae9fbd77d1b6e995a"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.2.0/severa-linux-amd64.tar.gz"
-      sha256 "539a1bedabf965abdb44aba0aabaab9dee267d420c1364184c32069186f20255"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.3.0/severa-linux-amd64.tar.gz"
+      sha256 "216b96c066f7dfd3b369cf32184be22d19a319a2e872c4b18d76dc8988990553"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.2.0/severa-linux-arm64.tar.gz"
-      sha256 "193dc2188c47611f5170f5d0fdb36da5d0ac19dc0a77b6ef2bf1bc5065edd84e"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.3.0/severa-linux-arm64.tar.gz"
+      sha256 "b012c8efab8ff7a19228010bb7080735d0789676be1714099e56b2568195244f"
     end
   end
 
@@ -34,10 +34,12 @@ class Severa < Formula
 
   def caveats
     <<~EOS
-      Point severa at a gateway, and sign in for anything acting on your behalf:
+      Sign in for anything acting on your behalf:
 
-        export SEVERA_GATEWAY_URL=https://severa-gateway.example.fi
         severa auth login
+
+      It talks to the deployed gateway by default; SEVERA_GATEWAY_URL or
+      --gateway override that.
     EOS
   end
 
