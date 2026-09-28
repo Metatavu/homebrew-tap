@@ -2,28 +2,28 @@
 class Severa < Formula
   desc "Controlled access to Severa for people, CI and agents"
   homepage "https://github.com/Metatavu/severa-cli"
-  version "0.4.0"
+  version "0.5.0"
 
   on_macos do
     # No Intel build: Apple stopped shipping those Macs in 2023. Rosetta
     # translates x86 to arm, not the reverse, so there is nothing to fall back to.
     depends_on arch: :arm64
 
-    url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.4.0/severa-darwin-arm64.tar.gz"
-    sha256 "576e5b577c6a8946b7a38b0535e38e756eaacdaa41532694c928df76976a8a75"
+    url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.5.0/severa-darwin-arm64.tar.gz"
+    sha256 "996cea4126cacadfbcf8c5ca1512e50e3b33e2852e8f41795b0f1dca6507073d"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.4.0/severa-linux-amd64.tar.gz"
-      sha256 "c6a661997fa223843234459c1ac6a88d18f61b1277f369f160463500c44e0286"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.5.0/severa-linux-amd64.tar.gz"
+      sha256 "55c6b02d6136040e17db461c4b744984bef6969c441528bc0844a71db5366249"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.4.0/severa-linux-arm64.tar.gz"
-      sha256 "9b8070b09e96f3caad084a8b4611416ca307a195afd4ccad0911b233902e53fd"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/severa-v0.5.0/severa-linux-arm64.tar.gz"
+      sha256 "ece951253d46bc627b8fcd785367880428a00a7d50ebfb861b71e80536589056"
     end
   end
 
