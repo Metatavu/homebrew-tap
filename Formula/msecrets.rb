@@ -2,28 +2,28 @@
 class Msecrets < Formula
   desc "Metatavu Secrets: set up, run and understand hosting secrets"
   homepage "https://github.com/Metatavu/metatavu-secrets"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     # No Intel build: Apple stopped shipping those Macs in 2023. Rosetta
     # translates x86 to arm, not the reverse, so there is nothing to fall back to.
     depends_on arch: :arm64
 
-    url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.2/msecrets-darwin-arm64.tar.gz"
-    sha256 "5580d8957afc3d608b6833a4099c8f52ae6a8d603d418123d6a509359d7b0b3f"
+    url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.3/msecrets-darwin-arm64.tar.gz"
+    sha256 "0238fda63977f80d0f6013a02400e6e71b0527eedeb9877a65ff9a1f85e8accb"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.2/msecrets-linux-amd64.tar.gz"
-      sha256 "910c946354c84d68df76d69c1451fcd5058e277b04b831313857d1aaff86455f"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.3/msecrets-linux-amd64.tar.gz"
+      sha256 "2e0d11da3e20c97d1a6c35cc4ee49925768afa68be28b4c535f19f01e073ca28"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.2/msecrets-linux-arm64.tar.gz"
-      sha256 "92c74bb48765f32d04871865d967dfe0667aa1deb9523a58e7df3d77e2fef2d2"
+      url "https://github.com/Metatavu/homebrew-tap/releases/download/msecrets-v0.1.3/msecrets-linux-arm64.tar.gz"
+      sha256 "914ee3e9fcf712a393f9e79dfc849f9e0bc8c7d8e553efd0c82d8d97d6ca4d94"
     end
   end
 
